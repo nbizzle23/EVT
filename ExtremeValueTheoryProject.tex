@@ -1,0 +1,995 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{calrsfs}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{amsthm}
+\usepackage{Sweave}
+\usepackage{graphics}
+\theoremstyle{plain}
+\newtheorem{fact}{Fact}[section]
+\newtheorem{thm}[fact]{Theorem}
+\newtheorem{pr}[fact]{Proposition}
+\newtheorem{re}[fact]{Remark}
+\newtheorem{cor}[fact]{Corollary}
+\newtheorem{de}[fact]{Definition}
+\newtheorem{lem}[fact]{Lemma}
+\newtheorem{exmp}[fact]{Example}
+
+\begin{document}
+\input{ExtremeValueTheoryProject-concordance}
+\begin{titlepage}
+\begin{center}
+
+\title\centerline{\bf Extreme Value Theory and Analysis} \bigskip
+
+
+\centerline{by Nicholas Burke}
+\bigskip
+A project submitted to the Department of Mathematical Sciences in conformity with the requirements for MATH 9801 (Graduate Project)
+\bigskip 
+
+Lakehead University Thunder Bay, Ontario \\
+Copyright \copyright (2019) Nicholas Burke
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{abstract}
+
+This Graduate project will discuss Extreme Value Theory and Extreme Value Analysis. Extreme Value Theory is a section of statistics pertaining to extreme values. It is used to describes the limiting behavior of extremes $max(X_2,...,X_n)$ or $min(X_2,...,X_n)$, the tails of the distributions. This project will explore important theorems and apply using the computer programming R, to further elaborate on this subject matter.  
+\end{abstract}
+
+\newpage
+
+\centerline{\bf Acknowledgements} \bigskip
+It has been a privilege to collaborate with  Dr. Deli Li, and Dr. Liping Liu on this project. Their expertise has been greatly appreciated and vital to the completion of this project. I also want to thank everyone who has supported me throughout my graduate school journey.  
+
+\newpage 
+
+\tableofcontents
+
+\newpage
+\section{Introduction}
+In this project, the origins of the Extreme Value Theory will be explored, related probability theory concepts will be addressed as well. In great detail, the two most important theorems in Extreme Value Theory will be examined as well as their respective related distributions. This project will continue from a practical approach, by outlining two methods in Extreme Value Analysis, concluding with an application using the computer programming software R.
+
+\subsection{Historical Review}
+Extreme Value Theory, EVT for short, was originally discovered in 1928 by two British statisticians Ronald Fisher and Leonard Tippett. The pair conjured three limiting distributions; Frechet, Weibull and Gumbel for the maximum value of an ordered sample. Essentially, these three distributions characterize the function G such that 
+\begin{center}
+$\lim_{n\rightarrow \infty}P(\frac{X_{n:n}-b_n}{a_n}\leq x)=\lim_{n\rightarrow \infty}F^n(a_nx+b_n)=G(x)$
+\end{center}
+where $X_{n:n}=max\{X_1,...,X_n \}$, $a_n,b_n$ are sequences of real numbers and $F_n$ is a cdf.
+\\
+At the time, the duo was unable to formulate a rigorous proof. 
+\\
+In 1943, Russian mathematician Boris Gnedenko was able to characterize each of the three types of limiting distributions as heavy tails as Frechet type and bounded support for Weibull. He was able to prove the max domains of attraction for the Frechet, Weibull and Gumbel distributions. Since then, there has been many development on the Fisher-Tippet-Gnedenko theorem to expand the topic of Extreme Value Theory. 
+
+\section{Extreme Value Theory}
+The goal of Extreme Value Theory is to estimate the probability of distant outliers, calculating such odds may have a large impact, despite the unlikeliness of it occurring. In order to apply extreme value theory to a data set, must be an order sample of a random variable.
+\subsection*{Preliminaries}
+To help grasp EVT, we will briefly cover some basic probability theory as well as some ordinal statistic concepts.
+
+\newpage
+\begin{de}
+A \textbf{probability density function (pdf)} is a function that describes the likelihood for a random variable to take on a given value.
+\begin{center}
+$f(x)=P\{X=x\}$
+\end{center}
+where $f(x)\leq 1$ for all x and $\sum f(x)=1$.
+\end{de}
+
+\begin{de}
+A \textbf{cumulative distribution function (cdf)} is the probability that the variable takes a value less than or equal to x.
+\begin{center}
+$F(x)=Pr\{X \leq x\}$ 
+\end{center}
+\end{de}
+
+\begin{de}
+Let $X_1,X_2,...,X_n$ be $i.i.d$ random variables taken from a discrete or continuous distribution, 
+The \textbf{order statistic} of
+\begin{center}
+ $X_{(1)},X_{(2)},...,X_{(n)}$.
+\end{center}
+The \textbf{order sample} is the strict inequality
+\begin{center}
+$X_{(1)}<X_{(2)}<...<X_{(n)}$
+\end{center}
+\end{de}
+
+\begin{de}
+ The \textbf{first order statistic} is the minimum of the sample: 
+\begin{center}
+$X_{(1)}=min(X_1,X_2,...,X_n)$
+\end{center}
+\end{de}
+
+\begin{de}
+The \textbf{$n^{th}$ order statistic} is the maximum of the sample:
+\begin{center}
+$X_{(n)}=max(X_1,X_2,...,X_n)$
+\end{center}
+\end{de}
+
+\begin{de}
+An \textbf{extreme value} is the minimum or maximum value in a probability distribution.
+\end{de}
+Consider the cumulative distribution function of $X_1$ and let $M_n=max\{X_1,...,X_n\}$. Then the cumulative distribution function of $M_n$ is 
+
+
+\begin{equation*}
+\begin{split}
+M_n &= P(X_1 \leq x,...,X_n \leq x)\\
+  &=P(X_1 \leq x)\cdots P(X_n \leq x)\\
+  &= F(x)^n
+  \end{split}
+  \end{equation*}
+
+\begin{de}
+An \textbf{extreme value distribution} is a limiting model for both the maximums and minimums of a particular data set. 
+\end{de}
+
+\begin{de}
+A \textbf{limiting distribution} models size  the data will reach.
+\end{de}
+
+\begin{de} 
+A non-degenerate distribution with cumulative distribution function $G(x)$ is an \textbf{extreme value distribution} if there are sequences of real numbers $a_n\geq 0$ and $b_n$ and cumulative distribution function $F(x)$ such that
+\begin{center}
+$\lim_{n\rightarrow \infty} F^n(a_nx+b_n)=G(x)$
+\end{center}
+at every point x where G is continuous. \\
+The distribution F is in the \textbf{domain of attraction} of G.
+\end{de}
+
+
+\subsection{Fisher-Tippett-Gnedenkno Theorem}
+The first important theorem in Extreme Value Theory is the \textbf{Fisher-Tippett-Gnedenkno Theorem}, also referred to as the \textbf{Extreme Value Theorem} is essentially a  generalization for the asymptotic distribution of extreme order statistics.
+\begin{thm}
+Let $X_1,X_2,..,X_n$ be a sequence of independent and identically-distributed random variables and $M_n=max({X_1,...,X_n})$. If as sequence of pairs of real numbers $(a_n,b_n)$ exists such that $a_n>0$ and
+\begin{center}
+$\lim{P(\frac{M_n-b_n}{a_n})\leq x}=F(x)$
+\end{center}
+where F is a non-degenerate distribution function, then the limit distribution F belongs to either the \textbf{Gumbel}, the \textbf{Frechet} or the \textbf{Weibull} family, these can be grouped into the \textbf{Generalized Extreme Value Distribution}.
+\end{thm}
+
+\begin{proof}
+In order to prove this theorem, we will use various examples to help illustrate the concept. We will start with a basic example on the standard uniform distribution and build upon it.
+\begin{exmp}
+Let $X$ to be a random variable with cumulative distribution function, $F(x)=P(X \leq x)$ and let $x^*=\sup\{x:F(x)<1\}$.\\
+Consider $X$ be uniformly distributed, $X \sim U(0,1)$, then
+ \begin{equation*} 
+\begin{split}
+     F(x) & = 0 ,x \leq 0\\
+            & = x , 0<x<1 \\
+            & = 1 ,x \geq 1
+ \end{split}
+\end{equation*}        
+Then in this case we have, $x^*=\sup\{F(x)<1\}=1$, thus if $F(x)<1$ for all $x$, then $x^*=\sup{x:F(x)<1}=\infty$.
+\end{exmp}
+Now lets consider the sequence of $iid$ random variables $X_1,X_2,..X_n,..$.\\
+Let $F(x)=P(X_1 \leq x)$ be the cumulative distribution function  $\forall x$ and let $x^*=\sup\{x:F(x)<1\}$. Then $\max_{1 \leq i \leq n } \rightarrow x^*$ in probability. \\
+We will prove this for two cases.\\
+\textbf{\texttt{CASE 1}}: $x^* < \infty$, for any given $\epsilon >0$ \\
+ \begin{equation*} 
+\begin{split}
+     P(\max_{1 \leq i \leq n }X_i \leq x^*) & = P(X_1 \leq x^*-\epsilon, X_2 \leq x^*-\epsilon,...,X_n \leq x^*-\epsilon )\\
+                 & = (F(x^*-\epsilon))^n \rightarrow 0 
+\end{split}
+\end{equation*}  
+Since $F(x^*-\epsilon)<1$\\ 
+\textbf{\texttt{CASE 2}}:\\    
+ \begin{equation*} 
+\begin{split}
+P(\max_{1 \leq i \leq n }X_i > x^* + \epsilon) & = 1- P(\max_{1 \leq i \leq n }X_i < x^* + \epsilon)\\
+                & = 1-(P(X_1 < x^* + \epsilon))^n\\
+                & = 1-1^n\\
+                &=  0
+\end{split}
+\end{equation*}  
+and hence\\
+$P(x^*-\epsilon < \max_{1 \leq i \leq n}X_i < x^*+\epsilon)=1-P(\max_{1 \leq i \leq n}X_i \leq x^*-\epsilon)-P(\max_{1 \leq i \leq n}X_i \leq x^*+\epsilon) \rightarrow 1$ \\
+as $n \rightarrow \infty$ 
+
+\begin{exmp}
+Let $X_1,X_2,...,X_n$ be a sequence of $iid$ with common probability distribution function given by\\
+\begin{center}
+$P(X_1=1-\frac{1}{m})=\frac{1}{2^m}$ for m=1,2,...
+\end{center}
+Possible values of $X_1$ are : $0,\frac{1}{2}, \frac{2}{3},\frac{3}{4},\frac{4}{5},\frac{5}{6},... \rightarrow x^*=1$ and hence $\max_{1 \leq i \leq n}X_1 \rightarrow 1$ in probability.
+\end{exmp}
+\textbf{\texttt{CASE 2}}: $x^* = \infty$, for any positive number $c$ \\
+\begin{equation*}
+\begin{split}
+P(\max_{1 \leq i \leq n }X_i > c) & = 1- P(\max_{1 \leq i \leq n }X_i \leq c)\\
+                & = 1-(F(c))^n\\
+                & \rightarrow 1-0\\
+                &= 1
+\end{split}
+\end{equation*}  
+Since $F(c)<1$ and hence $\max_{1 \leq i \leq n }X_i \rightarrow \infty$ in probability.\\
+Now we will be able to find two sequences $\{a_n>0 : n \geq 1\}$ and $\{b_n>0 : n \geq 1\}$ such that
+\begin{center}
+$P(\frac{\max_{1 \leq i \leq n }X_i-b_n}{a_n}\leq x)\rightarrow G(x)$ as $n \rightarrow \infty$
+\end{center}
+where $G(x)$ is a non-degenerate distribution function.\\
+Note that
+\begin{equation*}
+\begin{split}
+P(\frac{\max_{1 \leq i \leq n }X_i-b_n}{a_n}\leq x) & = P(\max_{1 \leq i \leq n} X_i \leq a_nx+b_n)\\
+& = (F(a_nx+b_n))^n, n\geq 1
+\end{split}
+\end{equation*}
+Therefore, we have
+\begin{center}
+$log(F(a_nx+b_n))^n \rightarrow logG(x)$ as $n \rightarrow \infty$\\
+$nlog(F(a_nx+b_n)) \rightarrow logG(x)$ as $n \rightarrow \infty$
+\end{center}
+
+\end{proof}
+From \emph{Definition 2.9} if and only if $n$ is large, $M_n$ can then be approximated by $a_nW+b_n$, where W is a random variable with cumulative distribution function $G(x)$, thus 
+\begin{center}
+$\lim_{n\rightarrow \infty}P(\frac{M_n-b_n}{a_n}\leq x)=G(x)$
+\end{center}
+at every continuity point of $G(x)$.\\
+The \textbf{Generalized Extreme Value Distribution} and related distributions will be discussed in detail in the subsequent sections.
+
+\subsection*{Basins of attraction}
+Although not every distribution is in the basin of attraction of an extreme value distribution, there are some basic conditions that can be checked to determine whether a distribution $F$ is attracted to a Frechet or reverse Weibull distribution.  
+
+\begin{thm} 
+Let F be a cumulative distribution function. Then F is in the basin of attraction of a Frechet distribution with $\varepsilon$ if and only if $F(x)<1$ for all $x \exists \Re$ and
+\begin{center}
+$\lim_{t \rightarrow \infty}\frac{1-F(tx)}{1-F(t)}=x^{\frac{-1}{\varepsilon}}$
+\end{center}
+for every $x>0$.
+\end{thm}
+
+
+\begin{thm}
+Let F be a cumulative distribution function. Then F is in the basin of attraction of a Weibull distribution with $\varepsilon$ if and only if $x^*=\sup\{x:F(x)<1\}<\infty$ and
+\begin{center}
+$\lim_{t \rightarrow 0+}\frac{1-F(x^*-tx)}{1-F(x^*-t)}=x^{\frac{-1}{\varepsilon}}$
+\end{center}
+for every $x>0$.
+\end{thm}
+
+
+\subsection{Generalized Extreme Value Distribution}
+The general idea from the aforementioned theorem, is that the extremes from any set of data with a well-behaved distribution can be modeled by the extreme value distributions.  The generalized extreme value distribution is the only limit distribution of re-normalized maxima of a sequence of independent and identically distributed random variables that satisfies the Fisher-Tippett-Gnedenkno Theorem. 
+\\
+\\
+\begin{thm}
+Every extreme value distribution has a cumulative distribution function as follows 
+\begin{center}
+$F(x:\sigma,\mu,\varepsilon)=e^{\{-[1+\varepsilon(\frac{x-\mu}{\sigma})]^{-\frac{1}{\varepsilon}}\}}$
+\end{center}
+and probability distribution as follows
+\begin{center}
+$f(x:\sigma,\mu,\varepsilon)=(1+\varepsilon(\frac{x-\mu}{\sigma}))^{(\frac{-1}{\varepsilon})-1}e^{\{-[1+\varepsilon(\frac{x-\mu}{\sigma})]^{-\frac{1}{\varepsilon}}\}}$
+\end{center}
+this known as the \textbf{Generalized Extreme Value Distribution} and  defined by three parameters, \textbf{location} parameter $\mu$, the \textbf{scale} parameter $\sigma$, and the \textbf{shape} parameter $\varepsilon$. $\sigma$ and $[1+\varepsilon(\frac{x-\mu}{\sigma})]$ must be greater than 0, $\varepsilon$ and $\mu$ can take on any real value.
+\\
+\end{thm}
+
+This development of this family of continuous probability distributions in Extreme Value Theory, essentially combines the \textbf{Gumbel, Frechet} and \textbf{Weibull} distributions, each will be examined further in the following sections. The maximum of a sample of independent and identically distributed random variables after normalization can only converge to these families of distributions. 
+
+
+\includegraphics{ExtremeValueTheoryProject-001}
+
+
+\subsection*{Gumbel Distribution} 
+The most commonly used extreme value distribution type in Extreme Value Theory, the \textbf{Gumbel} distribution is unbounded and defined on the entire set of real numbers. 
+When the \textbf{shape} parameter $\varepsilon=0$, the \textbf{Generalized Extreme Value Distribution} is equal to the \textbf{Gumbel} distribution.
+It can be used to model both minimums and maximums.
+\includegraphics{ExtremeValueTheoryProject-002}
+
+
+
+\subsection*{Minimum Gumbel Distribution}
+The general form of probability distribution function the Minimum Gumbel is as follows
+\begin{center}
+$F(x:\sigma,\mu)=\frac{1}{\beta}e^{(\frac{x-\mu}{\beta})}e^{e^{-\frac{x-\mu}{\beta}}}$
+\end{center}
+where  $\mu,\beta$ are the \textbf{location} and \textbf{scale} parameters, respectively.
+
+
+\subsection*{Standard Gumbel Distribution(Minimum)}
+When $\mu=0$ and $\beta=1$ the Minimum Gumbel distribution becomes standard form with probability distribution function as follows
+\begin{center}
+$F(x:\beta,\mu)=e^{x}e^{-e^{x}}$
+\end{center}
+
+\subsection*{Maximum Gumbel Distribution}
+The general form of probability distribution function the Maximum Gumbel is as follows
+\begin{center}
+$F(x:\sigma,\mu)=\frac{1}{\beta}e^{-(\frac{x-\mu}{\beta})}e^{-e^{-\frac{x-\mu}{\beta}}}$
+\end{center}
+where  $\mu,\beta$ are the \textbf{location} and \textbf{scale} parameters, respectively.
+
+
+\subsection*{Standard Gumbel Distribution(Maximum)}
+When $\mu=0$ and $\beta=1$ the Maximum Gumbel distribution becomes standard form with probability distribution function as follows
+\begin{center}
+$F(x:\beta,\mu)=e^{-x}e^{-e^{x}}$
+\end{center}
+
+In general the probability density function of a Gumbel distribution has only one unchanging shape which shifts according to $\mu$, as $\mu$ increases there is a leftward shift, and as $\mu$ decreases there is a rightward shift.\\
+
+The conditions of convergence for the Gumbel distribution is quiet complicated but we will go into further detail for the Frechet and Weibull distributions. 
+
+\subsection*{Simulating the Gumbel Distribution in R} 
+A Gumbel Extreme Value Distribution will be simulated using the data set below. Listed are the first six distribution values as well as the corresponding Gumbel Distribution plot.
+\begin{Schunk}
+\begin{Soutput}
+   Time Observations
+1 -10.0            0
+2  -9.9            0
+3  -9.8            0
+4  -9.7            0
+5  -9.6            0
+6  -9.5            0
+\end{Soutput}
+\end{Schunk}
+
+\includegraphics{ExtremeValueTheoryProject-004}
+
+
+
+\subsection*{Frechet Distribution}
+The \textbf{Frechet} distribution is typically used to model maximum values since it is only bounded on the lower end and defined on the interval $[\mu:\infty]$, converging slowly to 1. When the shape parameter $\varepsilon>0$, the \textbf{Generalized Extreme Value Distribution} is equal to the \textbf{Frechet} Distribution.
+
+\includegraphics{ExtremeValueTheoryProject-005}
+
+
+The general form of cumulative distribution function for Frechet is as follows
+\begin{center}
+$F(x)=e^{-\frac{x}{\alpha}}$
+\end{center}
+where $\alpha$ is the \textbf{shape} parameter.
+
+
+\subsection*{Standard Frechet Distribution}
+The standard form of cumulative distribution function for Frechet is as follows
+\begin{center}
+$F(x)=e^{-(\frac{x-\mu}{\beta})^{\alpha}}$, \;\; if $x>\mu$
+\end{center}
+where $\mu,\beta,\alpha$ are the \textbf{location, scale} and \textbf{shape} parameters, respectively.
+
+\newpage
+\subsection*{Condition of Convergence}
+If $G(x)$ is the distribution function of $X$, the $M_n$ can be re-scaled to converge in distribution to a Frechet if and only if
+\begin{center}
+$G(x)<1$ for all $x$ and $\lim_{t \rightarrow \infty}\frac{1-G(tx)}{1-G(x) }=x^{-\theta}$ for all $x>0$,
+\end{center}
+\begin{center}
+then $\lim_{n \rightarrow \infty}P(\frac{\max_{1 \leq i \leq n}X_i}{b_n}\leq x)=F(x)$.
+\end{center}
+In this case possible sequences are $a_n=0$ and $b_n=G^{-1}(1-\frac{1}{n})$ for $n \geq 1$.
+
+\begin{exmp}
+Lets consider the function
+\begin{center}
+\[
+  G(x)=\left\{
+  \begin{array}{ll}
+  1-\frac{1}{x},\;\; x\geq 1\\
+  0,\;\;\;\;\;\;\;\;\; x<1
+  \end{array}
+  \right.
+  \]
+\end{center}
+As we can see $G(x)<1$ for all $x>0$. Now to show that Frechet's condition holds.
+
+\begin{center}
+
+\begin{equation*}
+\begin{split}
+\lim_{t \rightarrow \infty}\frac{1-G(tx)}{1-G(x) } & =\lim_{t \rightarrow \infty}\frac{1-(1-\frac{1}{tx})}{1-(1-\frac{1}{t}) }\\
+& = \lim_{t \rightarrow \infty}\frac{\frac{1}{tx}}{\frac{1}{t}}\\
+& = \frac{1}{x}\\
+& = x^{-\theta}
+\end{split}
+\end{equation*}
+\end{center}
+where $\theta = 1$.
+\end{exmp}
+It is noteworthy that a sequence $b_n$ can be found as
+
+\begin{equation*}
+\begin{split}
+b_n & = G^{-1}(1-\frac{1}{n})\\
+& = \sup \{x:G(x) \leq 1-\frac{1}{n} \}\\
+& = \sup \{x:1- \frac{1}{x} \leq 1-\frac{1}{n} \}\\
+& = \sup \{x: \frac{1}{n} \leq \frac{1}{x} \}\\
+& = n, \;\;\;\; n \geq 1
+\end{split}
+\end{equation*}
+Thus,
+
+\begin{center}
+
+\[
+  \lim_{n \rightarrow \infty}P(\frac{\max_{1 \leq i \leq n }X_i}{n}\leq x)=\left\{
+  \begin{array}{ll}
+  e^{-x-1}, \;\;\; x> 0\\
+  0,\;\;\;\;\;\;\;\;\;\; x \leq 0
+  \end{array}
+  \right.
+  \]
+
+\end{center}
+
+\subsection*{Simulating the Frechet Distribution in R} 
+A Frechet Extreme Value Distribution will be simulated using the data set below. Listed are the first six distribution values as well as the corresponding Frechet Distribution plot.
+\begin{Schunk}
+\begin{Soutput}
+   Time Observations
+1 -10.0            0
+2  -9.9            0
+3  -9.8            0
+4  -9.7            0
+5  -9.6            0
+6  -9.5            0
+\end{Soutput}
+\end{Schunk}
+
+\includegraphics{ExtremeValueTheoryProject-007}
+
+
+\newpage
+\subsection*{Weibull Distribution}
+The \textbf{Weibull} distribution is typically used to model failure times and real life data analysis.
+It is entirely dependent on the choice if parameters and is only bounded on the upper end. 
+When the shape parameter $\varepsilon<0$, the \textbf{Generalized Extreme Value Distribution} is equal to the \textbf{Weibull} Distribution.
+
+\includegraphics{ExtremeValueTheoryProject-008}
+
+
+
+\subsection*{General Weibull Distribution}
+The general form of the probability distribution function for Weibull is as follows
+\begin{center}
+$f(x)=\frac{\gamma}{\alpha}\frac{x-\mu}{\alpha}^{(\gamma-1)}e^{(\frac{-x-\mu}{\alpha})^\gamma}$,\;\;\;\;\;$x \geq \mu ; \gamma, \alpha >0$
+\end{center}
+where $\gamma,\alpha, \mu$ are the \textbf{shape, scale} and \textbf{location} parameters respectively.
+
+\subsection*{Standard Weibull Distribution}
+When $\mu=0$ and $\alpha=1$, Weibull probability distribution function takes on the standard form as follows
+\begin{center}
+$f(x)=\gamma x^{(\gamma-1)}e^{({-x-^{\gamma})}}$,\;\;\;\;\;$x \geq 0;\gamma >0$, 
+\end{center}
+where $\gamma,\alpha, \mu$ are the \textbf{shape, scale} and \textbf{location} parameters respectively. \\
+\\
+
+For the two parameters case,  the standard Weibull probability distribution function is as follows
+\begin{center}
+$f(x)=\frac{\gamma}{\alpha}(\frac{x}{\alpha})^{\gamma-1}e^{-[\frac{x}{\alpha}]^\gamma}$,\;\;\;\;$x \geq 0$
+\end{center}
+where $\gamma,\alpha, \mu$ are the \textbf{shape, scale} and \textbf{location} parameters respectively.
+
+
+\subsection*{Condition of Convergence}
+If $G(x)$ is the distribution function of $X$, the $M_n$ can be re-scaled to converge in distribution to a Weibull if and only if
+\begin{center}
+$\omega=\sup \{x:G(x)<1\}<\infty$ and 
+\end{center}
+\begin{center}
+$\frac{1-G(\omega+tx)}{1-G(\omega - t) }\rightarrow_{t \rightarrow \infty} x^{-\theta}$ for $x<0$.
+\end{center}
+In this case possible sequences are $b_n=\omega$ and $a_n=\omega-G^{-1}(1-\frac{1}{n})$ for $n \geq 1$
+
+\begin{exmp}
+Lets consider the function below on the unit interval $[0,1]$ with uniform distribution
+\begin{center}
+\[
+  G(x)=\left\{
+  \begin{array}{ll}
+  0,\;\;\;\;x<0 \\
+  x, \;\;\;\;0 \leq x \leq 1\\
+  0, \;\;\;\;x>1
+  \end{array}
+  \right.
+  \]
+\end{center}
+thus we have
+\begin{equation*}
+\begin{split}
+\omega & = \sup \{G(x)<1 \} \\
+& = \sup\{x:x<1\}\\
+& = 1
+\end{split}
+\end{equation*}
+and
+\begin{center}
+
+\begin{equation*}
+\begin{split}
+\frac{1-G(1+tx)}{1-G(1-t) } & =\frac{1+(1+tx)}{1-(1-t) }\\
+& = \frac{-tx}{t}\\
+& = -x^{\theta},\;\;\;\;x<0
+\end{split}
+\end{equation*}
+\end{center}
+where $\theta = 1$ and $0<t<\min\{1,\frac{-1}{x}\}$
+\end{exmp}
+It is noteworthy that a sequence $a_n$ can be found as
+
+\begin{equation*}
+\begin{split}
+a_n & = \omega - G^{-1}(1-\frac{1}{n})\\
+& =  1-(1-\frac{1}{n}) \\
+& = \frac{1}{n},\;\;\;\; n\geq 1\\
+& b_n = 1
+\end{split}
+\end{equation*}
+Thus,
+
+\begin{center}
+
+\[
+  \lim_{n \rightarrow \infty}P(\frac{\max_{1 \leq i \leq n }X_i-1}{\frac{1}{n}}\leq x)=\left\{
+  \begin{array}{ll}
+  e^{x},\;\;\; x< 0\\
+  1, \;\;\;\;\; x \geq 0
+  \end{array}
+  \right.
+  \]
+
+\end{center}
+
+\newpage
+\subsection*{Simulating the Weibull Distribution in R} 
+A Weibull Extreme Value Distribution will be simulated using the data set below. Listed are the first six distribution values as well as the corresponding Weibull Distribution plot.
+\begin{Schunk}
+\begin{Soutput}
+   Time Observations
+1 -10.0 1.919718e-43
+2  -9.9 2.338991e-42
+3  -9.8 2.726787e-41
+4  -9.7 3.042965e-40
+5  -9.6 3.252047e-39
+6  -9.5 3.329823e-38
+\end{Soutput}
+\end{Schunk}
+
+\includegraphics{ExtremeValueTheoryProject-010}
+
+
+\newpage
+\subsection{Pickands-Balkema-deHaan Theorem}
+The second most important theorem in EVT, the \textbf{Pickands-Balkema-deHaan Theorem} is mainly used for threshold exceedances. Suppose the true distribution of a random variable $X$ is unknown, this theorem essentially provides an asymptotic tail distribution for it. The Peaks-Over-Threshold method uses this theorem extensively to provide results.
+
+\subsection*{Conditional Excess Distribution Function}
+Suppose there is a random variable $x$ from some unknown distribution $F$.\\
+Then the conditional excess distribution function is
+\begin{center}
+$F_u(y)=P(X-u \leq y |X>u)=\frac{F(u+y)-F(u)}{1-F(u)}$,\;\;\;\;\;$0\leq y \leq x_f-u$
+\end{center}
+where $x_f$ is either the finite or infinite right endpoint of the underlying distribution $F$.\\
+\\
+Essentially the function $F_u$ describes the distribution of excess over a given threshold $u$, given that threshold has been exceeded.
+
+\begin{thm}
+Let $(X_1,X_2,...)$ be a sequence of independent and identically distribution random variables and let $F_u$ be their conditional excess distribution function. For a large class of underlying distribution functions $F$, and large $u$, $F_u$ is well approximated by the \textbf{Generalized Pareto Distribution}. That is 
+\begin{center}
+$F_u(y)=G_{k,\sigma}(y)$ as $u\rightarrow \infty$
+\end{center}
+
+where
+\begin{center}
+ \[
+     G_{k,\sigma}(y)=\left\{
+                \begin{array}{ll}
+                  1-(1+\frac{ky}{\sigma})^{\frac{-1}{k}},&\text{if k $\neq$ 0}\\
+                  1-e^{\frac{-y}{\sigma}},&\text {if k = 0}
+                \end{array}
+              \right.
+ \] 
+ \end{center}
+ \begin{itemize}
+  \item $k \geq 0$ then $\sigma > 0$ and $y \geq 0$
+  \item $k<0$ then $0 \leq y \leq \frac{-\sigma}{k}$
+
+\end{itemize}
+
+\begin{center}
+$\lim_{u \rightarrow \infty} \sim GPD(u,\sigma,\varepsilon)$
+\end{center}
+\end{thm}
+
+\begin{proof}
+Omitted.
+\end{proof}
+If the probability distribution $F$ of a random variable is not highly unusual, regardless of $F$, provided that the threshold $u$ is sufficiently large exceedances of $u$ will be distributed as the \textbf{Generalized Pareto Distribution}.
+\newpage
+\subsection{Generalized Pareto Distribution}
+The \textbf{Generalized Pareto Distribution} is a family of continuous probability distributions defined by three parameters, modelling the tails of another distributions.
+\\
+The standard cumulative distribution function is as follows
+\begin{center}
+ \[
+     F_{\varepsilon}(x)=\left\{
+                \begin{array}{ll}
+                  1-(1+\varepsilon x)^{\frac{-1}{\varepsilon}},&\text{for  $\varepsilon \neq 0$}\\
+                  1-e^{-x},&\text {for $\varepsilon =0$}
+                \end{array}
+              \right.
+ \]
+\end{center}
+where $\varepsilon$ is the \textbf{shape} parameter
+\begin{itemize}
+  \item when $x \geq 0$ for $\varepsilon \geq 0$ 
+  \item when $0\leq x \leq \frac{-1}{\varepsilon}$ for $\varepsilon <0$
+\end{itemize}
+
+The probability distribution function is as follows
+\begin{center}
+ \[
+     f_{\varepsilon}(x)=\left\{
+                \begin{array}{ll}
+                  \frac{1}{\sigma}(\varepsilon x + 1)^{\frac{-\varepsilon +1}{\varepsilon}},&\text{for  $\varepsilon \neq 0$}\\
+                  \frac{1}{\sigma}-e^{-x},&\text {for $\varepsilon =0$}
+                \end{array}
+              \right.
+ \]
+\end{center}
+where $\varepsilon$ is the \textbf{shape} parameter.
+\subsection*{Standard Generalized Pareto Distribution}
+In order to standardize this distribution we will  replace $x$ with $\frac{x-\mu}{\sigma}$ and then adjust the support accordingly. \\
+The cumulative distribution function is as follows
+\begin{center}
+ \[
+     F_{\varepsilon,\mu,\sigma}(x)=\left\{
+                \begin{array}{ll}
+                  1-(1+\varepsilon \frac{x-\mu}{\sigma})^{\frac{-1}{\varepsilon}},&\text{for  $\varepsilon \neq 0$}\\
+                  1-e^{(-\frac{x-\mu}{\sigma})},&\text {for $\varepsilon =0$}
+                \end{array}
+              \right.
+ \]
+\end{center}
+where $\mu,\sigma,\varepsilon$ are the \textbf{location, scale} and \textbf{shape} parameters, respectively.
+\begin{itemize}
+  \item for $x \geq \mu$ when $\varepsilon \geq 0$
+  \item for $\mu \leq x \leq \mu-\frac{\sigma}{\varepsilon}$ when $\varepsilon <0$
+\end{itemize}
+where $\mu \exists \Re, \mu >0, \varepsilon \exists \Re$. \\
+The probability distribution function is as follows
+
+\begin{center}
+$f_{\varepsilon,\mu,\sigma}(x)=\frac{1}{\sigma}(1+\frac{\varepsilon(x-\mu)}{\sigma})^{\frac{-1}{\varepsilon}-1}$
+\end{center}
+where $\mu,\sigma,\varepsilon$ are the \textbf{location, scale} and \textbf{shape} parameters, respectively.
+\begin{itemize}
+  \item for $x \geq \mu$ when $\varepsilon \geq 0$ 
+  \item for $\mu \leq x \leq \mu-\frac{\sigma}{\varepsilon}$ when $\varepsilon <0$
+\end{itemize}
+
+
+\includegraphics{ExtremeValueTheoryProject-011}
+
+
+
+\subsection*{Exponential Distribution}
+The standardized exponential distribution has a distribution function of the form
+\begin{center}
+$F(x)=1-e^{-x}$, $x>0$
+\end{center}
+with \textbf{location} and \textbf{scale} parameters $\mu$ and $\sigma$ included, it has distribution function
+\begin{center}
+$F(x)=1-e^{(\frac{-x-\mu}{\sigma})}$, $x>\mu$
+\end{center}
+The distribution function of that one-parameter distribution will be denoted by
+\begin{center}
+$F(x)=1-e^{(\frac{-x}{\sigma})}$
+\end{center}
+When the \textbf{shape} parameter $\varepsilon=0$ and the \textbf{location} parameter $\mu=0$, the \textbf{Generalized Pareto Distribution} is equal to the \textbf{Exponential} distribution 
+
+\includegraphics{ExtremeValueTheoryProject-012}
+
+\subsection*{Pareto Distribution}
+The standardized Pareto distribution has a distribution function of the form
+\begin{center}
+$F(x)=1-x^{-\alpha}$, $x\geq 1,\alpha >0$
+\end{center}
+with \textbf{location} and \textbf{scale} parameters $\mu$ and $\sigma$ included, it has distribution function
+\begin{center}
+$F(x)=1-(\frac{x-\mu}{\sigma})^{-\alpha}$, $x\geq \mu + \sigma$ $\alpha,\sigma>0$
+\end{center}
+The distribution function of that two-parameter Pareto distribution will be denoted by
+\begin{center}
+$F(x)=1-(\frac{\sigma}{x+\sigma})^{\alpha}$ $x \geq 0, \alpha,\sigma>0$
+\end{center}
+
+When the \textbf{shape} parameter $\varepsilon>0$ and the \textbf{location} parameter $\mu=\frac{\sigma}{\varepsilon}$, the \textbf{Generalized Pareto Distribution} is equal to the \textbf{Pareto} distribution, with \textbf{scale} parameter $x_m=\frac{\sigma}{\varepsilon}$ and \textbf{shape} parameter $\alpha=\frac{1}{\varepsilon}$.
+
+
+\includegraphics{ExtremeValueTheoryProject-013}
+
+
+\subsection*{Beta Distribution}
+The standardized Beta distribution has a distribution function of the form
+\begin{center}
+$F(x)=1-(-x)^{-\alpha}$; $-1\geq x\geq 0,\alpha <0$
+\end{center}
+with \textbf{location} and \textbf{scale} parameters $\mu$ and $\sigma$ included, it has distribution function
+\begin{center}
+$F(x)=1-(\frac{-x-\mu}{\sigma})^{-\alpha}$; $\mu -\sigma x \geq \sigma$ $\alpha<0, \sigma>0$
+\end{center}
+\includegraphics{ExtremeValueTheoryProject-014}
+
+
+
+
+
+
+
+\newpage
+\section{Extreme Value Analysis}
+Statistical inference about rare events is related to observations which are rare in some sense. The statistical inference associated with Extreme Value Analysis is essentially the estimation of the shape, location and scale parameters. This can then be used as a basis for any estimation  of other relevant parameters.
+
+\subsection*{ \textbf{Criteria}}
+A set of data must satisfy the following conditions in order to be applicable to EVT
+\begin{itemize}
+\item Continuous probability distribution   
+\item Inverse
+\item Consist of independent and identically distributed random variables 
+\end{itemize}
+
+The general concept behind Extreme Value Analysis is based upon, if you were to generate any number of data sets, take the maximum and minimum value from each; a new distribution can be generated.  
+The limit in this case can be viewed as a failure point, a point that if exceeded a failure or end-of-life event will occur.  
+
+
+\subsection{Block Maxima}
+The \textbf{Block Maxima} method separates historical data in $k$ blocks, typically over some time period such months, years or quarter, and examines and collects the maximum  value from each, as sample data in order to model the tail risk distributions. This newly created data can be approximated by an extreme value distribution using parametric statistical methods under the extreme value conditions.  
+
+\begin{itemize}
+\item [\textbf{Pros}]
+\item Simple interpretation and application  
+\item Retains some lower observations
+\item Can be applied to non $iid$ observations
+\item Block periods often occur naturally in most situations
+\item [\textbf{Cons}]
+\item Misses some high observations 
+\item Framework not as useful in a straightforward manner
+\end{itemize}
+
+The \textbf{Block Maxima} can be denoted as:
+\begin{center}
+$M_n := max(X_1,...,X_n)$
+\end{center}
+is the maximum from $n$ observations. 
+
+The distribution function of the \textbf{Block Maxima}, given the distribution function of the random variables $X_i$ is given by the following,
+\begin{center}
+$P(M_n\leq x)=P(X_1 \leq x,...,X_n \leq x)=F^n(x)$
+\end{center}
+
+This distribution depends on the distribution of the underlying random variables, which may not be known in practice. Using the results of the \textbf{Fisher-Tippet-Gnedenko theorem}, we can use the asymptotically distribution for a large value of $n$ to the  fit  the \textbf{Generalized Extreme Value Distribution}. 
+\begin{thm}
+If appropriately normalized block maxima converge in distribution to a non-trivial limit distribution, then this distribution is the generalized extreme value (GEV) distribution as follows;
+\begin{center}
+ \[
+     H_{\varepsilon}(x)=\left\{
+                \begin{array}{ll}
+                  e^{-(1+\varepsilon x)^{\frac{-1}{\varepsilon}}},&\text{for  $\varepsilon \neq 0$}\\
+                  e^{-e^{-x}},&\text {for $\varepsilon =0$}
+                \end{array}
+              \right.
+ \]
+\end{center}
+where $\varepsilon$ is the \textbf{shape} parameter, that determine whether it belongs to \textbf{Gumbel, Frechet} or \textbf{Weibull} family of distributions .
+\end{thm}
+
+\newpage
+\subsection{Peaks-Over-Threshold}
+The \textbf{Peaks-Over-Threshold} method sets a specific threshold value and collects data points that exceed such value, to find a conditional distribution. This distribution is approximately a Generalized Pareto Distribution using parametric statistical methods under extreme value conditions. The Generalized Pareto Distribution is primarily used for modelling the tails of distributions. 
+
+\begin{itemize}
+\item [\textbf{Pros}]
+\item  Efficient and relevant use of data
+\item Picks up all relevant high observations
+\item [\textbf{Cons}]
+\item Difficult to implement
+\item Hard to know if theoretical conditions are satisfied
+\end{itemize}
+
+Let $X$ be the random variable representing losses and let $u$ be a certain threshold. Then the random variable $X-u$ is the value of exceedances over the threshold $u$, if the threshold has been exceeded. The excess distribution function $F_u$ is given by the following
+\begin{center}
+$F_u(x)=P(X-u\leq x|X>u)=\frac{P(X-u \leq x \land X>u)}{P(X>u)}=\frac{F(x+u)-F(u)}{1-F(u)} $
+\end{center}
+
+An important result of Extreme Value Theory is that this function can be approximated by the Generalized Pareto Distribution.
+
+\begin{thm}
+For a 
+class of distributions a function $\beta(u)$ can be found such that 
+\begin{center}
+$\lim_{u\rightarrow \bar{x}} \sup_{0\leq x < \bar{x}-u}|F_u(x)-G_{\varepsilon, \beta(u)}|=0$
+\end{center}
+where, $\bar{x}$ is the rightmost point of the distribution and $u$ is the threshold point
+\end{thm}
+
+This theorem holds true for many of the standard distributions, essentially the conditional distribution of sizes of exceedances above threshold $u$ can be asymptotically modeled by the Generalized Pareto Distribution.
+
+
+\newpage
+\section{Application}
+Extreme Value Theory has applications related to the environment, hydrology, finance and sports as well as other fields of study. As mentioned before this is called Extreme Value Analysis, where the extreme part of a sample is of greater focus. The statistical analysis of extremes can be implemented using various packages depending on a the specific topic. For this implementation of EVT will we be using the  "extRemes" package in R. This package consists of Extreme Value Analysis functions used for performing extreme value analysis.
+
+\subsection{EVT in R}
+With the use of the "extRemes" package we will demonstrate how both the Peak-Over-Threshold and the Block Method approach are used. The Block Maxima method in the most basic approach in EVT, essentially the sample is divided  into non-overlapping periods of equal size over an observed period of time, then the maximum observations in each period form a set of data. The Peak-Over-Threshold method, involves setting a certain threshold on the sample in which the exceedances form a new set of data of interest.
+
+\subsection*{Block Maxima Method}
+The Block Maxima Method require a practical selection for the intermediate sequence $k = k_n$ in a sample of size $n$. The observations created follow domain of attraction conditions that can be approximated by an Extreme Value Distribution, $GEV$.
+
+\subsection*{Use in R}
+Using "library(extRemes)", we will be using 12 blocks, with mean set to 5 and standard deviation set to 2. Create a series of maxima, we can simulate blocks of data, which are plotted below.
+
+\includegraphics{ExtremeValueTheoryProject-015}
+
+Now using the Maxima data generated, based on the Fisher-Tippet-Gnednko theorem, the density generated will have the same shape of the Gumbel distribution. 
+
+\includegraphics{ExtremeValueTheoryProject-016}
+
+
+ 
+\subsection*{Peak-Over-Threshold Method}
+
+The Peaks-Over-Thresholds method uses observations above a given threshold, $u$. This threshold is determined by using the size of exceedances or the number of events within a period of time. This results in a more optimal sequence $k$, that minimizes the asymptotic Mean Square Error, as opposed to the Block Maxima method.
+
+\subsection*{Use in R}
+Based on the data series created in the previous method, will set the threshold to 7.5 to create a plot of the data points that meet this requirement, below.
+\includegraphics{ExtremeValueTheoryProject-017}
+
+Now we will plot the excess distribution  $F_u$, and based on the conditional distribution of sizes of exceedances it will modeled by the Generalized Pareto Distribution, $GPD$ according to \emph{Theorem 3.2}.
+
+\includegraphics{ExtremeValueTheoryProject-018}
+
+\subsection*{Further Discussion}
+In this project, we explored EVT from both a theoretical and  analytically perspective, and how the two can intertwine to produce real piratical results. The Block Maxima method is primarily used for annual data by generating an Annual Maxima series. For this particular kind of analysis, the Fisher-Tippet-Gnedenko theorem is only partially useful with a greater emphasis and the type distribution for fitting the data, which in most cases differ from the GEV distributions. This is due to the fact that relevant data over the course of a year maybe be limited in a historical sense. The Peaks-Over-Threshold method relies on the Poisson distribution for fitting the number of events and the GP distribution for fitting the size of exceedances.     
+
+
+EVT is very important in risk analysis where the result can have a large traumatic impact. Some real world applications include are not constrained to the parameters of this
+project, such as environmental and financial catastrophes.
+In the future, it would be interesting to continue the study of various situations like this apply various EVT tools. In conclusion, this project was only the basis for EVT, with a vast number of applications and outcomes to be further elaborated upon.
+
+\newpage
+\subsection{R Code/Output}
+Below is the supplementary R code used throughout this paper.
+\begin{verbatim}
+#GEV Distributions
+library(evd)
+library(fExtremes)
+x <- seq(-10, 10, by=0.1)
+Gumbel_density <- exp(-x-exp(-x))
+Frechet_density <- dgev(x, xi=0.8, mu=0)
+Weibull_density <- dgev(x, xi=-0.3, mu=0)
+plot(c(x,x,x), c(Gumbel_density,Frechet_density, Weibull_density),
+     type='n', xlab="x", ylab=" ",las=1)
+lines(x, Gumbel_density, type='l', lty=1, col='green')
+lines(x, Weibull_density, type='l', lty=2, col='blue')
+lines(x, Frechet_density, type='l', lty=3, col='red')
+legend('topright', legend=c('Gumbel','Frechet','Weibull'), lty=c(1,2,3), col=c('green','blue','red'))
+\end{verbatim}
+
+\begin{verbatim}
+#Gumbel Distribution
+GumbelDistribution <- data.frame(x, Gumbel_density)
+names(GumbelDistribution) <- c("Time", "Observations")
+head(GumbelDistribution)
+plot(GumbelDistribution, col="green", pch=19, cex=0.8,
+     main="Plot of Extreme Value Distribution - Gumbel")
+     
+#Simulating the Gumbel Distribution in R     
+x <- seq(-10, 10, by=0.1)
+Gumbel_density <- exp(-x-exp(-x))
+GumbelDistribution <- data.frame(x, Gumbel_density)
+names(GumbelDistribution) <- c("Time", "Observations")
+head(GumbelDistribution)
+\end{verbatim}
+
+\begin{verbatim}
+#Frechet Distribution
+FrechetDistribution <- data.frame(x, Frechet_density)
+names(FrechetDistribution) <- c("Time", "Observations")
+head(FrechetDistribution)
+plot(FrechetDistribution, col="blue", pch=19, cex=0.8,
+     main="Plot of Extreme Value Distribution - Frechet")
+     
+#Simulating the Frechet Distribution in R} 
+x <- seq(-10, 10, by=0.1)
+Frechet_density <- dgev(x, xi=0.8, mu=0)
+FrechetDistribution <- data.frame(x, Frechet_density)
+names(FrechetDistribution) <- c("Time", "Observations")
+head(FrechetDistribution)
+plot(FrechetDistribution, col="blue", pch=19, cex=0.8,
+     main="Plot of Extreme Value Distribution - Frechet")
+\end{verbatim}
+
+\begin{verbatim}
+#Weibull Distribution   
+WeibullDistribution <- data.frame(x, Weibull_density)
+names(WeibullDistribution) <- c("Time", "Observations")
+head(WeibullDistribution)
+plot(WeibullDistribution, col="red", pch=19, cex=0.8,
+     main="Plot of Extreme Value Distribution - Weibull")
+     
+#Simulating the Weibull Distribution in R
+x <- seq(-10, 10, by=0.1)
+Weibull_density <- dgev(x, xi=-0.3, mu=0)
+WeibullDistribution <- data.frame(x, Weibull_density)
+names(WeibullDistribution) <- c("Time", "Observations")
+head(WeibullDistribution)
+plot(WeibullDistribution, col="red", pch=19, cex=0.8,
+     main="Generated Plot of the Weibull Distribution")
+\end{verbatim}
+
+\begin{verbatim}
+#Block Maxima Method in R
+
+set.seed(123)
+library(extRemes)
+## block size
+n <- 12
+original_mean <- 5
+original_sd <- 2
+
+## Create a series of maxima
+series_length <- 200
+maxima <- c()
+## Simulate blocks of data
+data_series <- list()
+for (i in 1:series_length) {
+  data_series[[i]] <- rnorm(n = n, mean = original_mean, sd = original_sd)
+}
+maxima <- unlist(lapply(data_series, max))
+plot(maxima, main = "Block maxima", type = "l")
+
+fit <- fevd(maxima, type = "Gumbel")
+plot(fit, type = "density", main = "Empirical density vs estimated Gumbel distribution")
+
+#Peak-Over-Threshold Method in R
+
+## Setting the threshold u
+threshold <- 7.5
+plot(x = rep(1:series_length, each = n), y = unlist(data_series), main = "Peak Over Thresholds",
+     sub = paste("threshold =", threshold), xlab = "series", ylab = "value")
+pot_points <- unlist(data_series) > threshold
+points(x = rep(1:series_length, each = n)[pot_points], y = unlist(data_series)[pot_points], col = "red")
+abline(h = threshold, col = "red")
+
+gp_fit <- fevd(unlist(data_series), threshold = threshold, type = "GP")
+plot(gp_fit, type = "density", main = "Empirical POT exceedances density vs estimated GP distribution")
+
+plot(gp_fit, type = "rl", main = "Return level")
+\end{verbatim}
+
+
+
+\newpage
+\section{Bibliography}
+
+\begin{itemize}
+  \item Limit Distributions of Extreme Order Statistics under Power Normalization and Random Index by Z. Peng, Q. Jiang, S. Nadarajah
+  \item A Simple Point Estimator of the Power of Moments by D. Li, A.Rosalsky, S. Zhang 
+  \item Evaluation of Peaks-Over-Threshold Method by Soheil Saeed Far and Ahmad Khairi Abd. Wahab
+  \item Extremes by R.L. Wolpert
+  \item Extreme Value Theory for Risk Factors in R by John Akwei
+  \item Extreme Value Analysis by Shikun Li
+  \item Extreme Value Theory: An Introduction by L. De Haan, A. Ferreira
+  \item EXTREME VALUE THEORY: AN APPLICATION TO SPORTS by Sergio Luis Ganhao Vicente
+  \item Extreme value distributions in R
+  \item Fisher-Tippett Theorem with an Historical Perspective by A. Charpentier
+  \item Operational Risk: Modeling Analytics by Harry H. Panjer
+  \item Outline proof of the extreme value theorem in statistics
+\end{itemize}
+
+
+
+
+\end{document}
