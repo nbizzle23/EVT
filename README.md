@@ -1,60 +1,18 @@
 # Extreme Value Theory
 
-This project discusses the statistics related to extreme values known as Extreme Value Theory and Analysis. Using the limiting behavior in the tails of the extreme distributions the probaililty and the nature of these occurence can be determined. With RStudio, various applications and  theorems of EVT  will be explored. 
+This project discusses the statistics related to extreme values known as Extreme Value Theory and Analysis. Using the limiting behavior in the tails of the extreme distributions the probability and the nature of these occurrence can be determined. With RStudio, various applications and  theorems of EVT  will be explored. 
 
-## Getting Started
+### Supplementary R Code
 
-These instructions will ET you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+Below is the code need to re-create the graphics used in this document
 
 ```
-Give examples
-```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+library(evd)
+library(extRemes)
+library(fExtremes)
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Compile PDF 
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-LaTex or R Sweave
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
