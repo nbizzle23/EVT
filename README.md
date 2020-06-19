@@ -4,7 +4,7 @@ This [project](https://github.com/nbizzle23/EVT/blob/master/ExtremeValueTheoryPr
 
 ### Supplementary R Code
 
-Below is the code need to re-create the graphics used in this document
+Below is the code needed to re-create the graphics used in this document
 
 ```
 
