@@ -58,41 +58,47 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [RStudio](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [LaTex](https://maven.apache.org/) - Dependency Management
-* [RSweave](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [RStudio](https://rstudio.com/products/rstudio/) - The Open source license
+* [CRAN](https://cran.r-project.org/) - The Comprehensive R Archive Network for packages
+* [LaTex](https://www.latex-project.org/) - A document preparation system
 
-## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+## Author
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Nicholas Burke** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Nicholas Burke** 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project submitted was to the Department of Mathematical Sciences at Lakehead University
 
 ## Acknowledgments
 
+* Dr. Deli Li
+
+* Dr. Liping Liu
+
 * Limit Distributions of Extreme Order Statistics under Power Normalization and Random Index by Z. Peng, Q. Jiang, S. Nadarajah
+
 * A Simple Point Estimator of the Power of Moments by D. Li, A.Rosalsky, S. Zhang 
+
 * Evaluation of Peaks-Over-Threshold Method by Soheil Saeed Far and Ahmad Khairi Abd. Wahab
+
  * Extremes by R.L. Wolpert
+
 * Extreme Value Theory for Risk Factors in R by John Akwei
-*Extreme Value Analysis by Shikun Li
+
+* Extreme Value Analysis by Shikun Li
+
 * Extreme Value Theory: An Introduction by L. De Haan, A. Ferreira
+
 * EXTREME VALUE THEORY: AN APPLICATION TO SPORTS by Sergio Luıs Ganhao Vicente
+
 * Extreme value distributions in R
+
 * Fisher-Tippett Theorem with an Historical Perspective by A. Charpentier
+
 * Operational Risk: Modeling Analytics by Harry H. Panjer
+
 * Outline proof of the extreme value theorem in statistics
 
 
