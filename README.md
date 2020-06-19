@@ -4,7 +4,7 @@ This project discusses the statistics related to extreme values known as Extreme
 
 ### Supplementary R Code
 
-Below is the code need to re-create the graphics used in this document
+Below is the code needed to re-create the graphics used in this document
 
 ```
 
