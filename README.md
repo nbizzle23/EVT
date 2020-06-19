@@ -58,9 +58,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [RStudio](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [LaTex](https://maven.apache.org/) - Dependency Management
+* [RSweave](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -72,7 +72,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Nicholas Burke** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -82,22 +82,18 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-\begin{itemize}
-  \item Limit Distributions of Extreme Order Statistics under Power Normalization and Random Index by Z. Peng, Q. Jiang, S. Nadarajah
-  \item A Simple Point Estimator of the Power of Moments by D. Li, A.Rosalsky, S. Zhang 
-  \item Evaluation of Peaks-Over-Threshold Method by Soheil Saeed Far and Ahmad Khairi Abd. Wahab
-  \item Extremes by R.L. Wolpert
-  \item Extreme Value Theory for Risk Factors in R by John Akwei
-  \item Extreme Value Analysis by Shikun Li
-  \item Extreme Value Theory: An Introduction by L. De Haan, A. Ferreira
-  \item EXTREME VALUE THEORY: AN APPLICATION TO SPORTS by Sergio Luıs Ganhao Vicente
-  \item Extreme value distributions in R
-  \item Fisher-Tippett Theorem with an Historical Perspective by A. Charpentier
-  \item Operational Risk: Modeling Analytics by Harry H. Panjer
-  \item Outline proof of the extreme value theorem in statistics
-\end{itemize}
+* Limit Distributions of Extreme Order Statistics under Power Normalization and Random Index by Z. Peng, Q. Jiang, S. Nadarajah
+* A Simple Point Estimator of the Power of Moments by D. Li, A.Rosalsky, S. Zhang 
+* Evaluation of Peaks-Over-Threshold Method by Soheil Saeed Far and Ahmad Khairi Abd. Wahab
+ * Extremes by R.L. Wolpert
+* Extreme Value Theory for Risk Factors in R by John Akwei
+*Extreme Value Analysis by Shikun Li
+* Extreme Value Theory: An Introduction by L. De Haan, A. Ferreira
+* EXTREME VALUE THEORY: AN APPLICATION TO SPORTS by Sergio Luıs Ganhao Vicente
+* Extreme value distributions in R
+* Fisher-Tippett Theorem with an Historical Perspective by A. Charpentier
+* Operational Risk: Modeling Analytics by Harry H. Panjer
+* Outline proof of the extreme value theorem in statistics
+
 
 
