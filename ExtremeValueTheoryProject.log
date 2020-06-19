@@ -1,0 +1,744 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.18)  17 JUN 2020 15:30
+entering extended mode
+**./ExtremeValueTheoryProject.tex
+(ExtremeValueTheoryProject.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\calrsfs\calrsfs.sty"
+\symrsfscript=\mathgroup6
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\bm.sty"
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
+Package: microtype 2017/07/07 v2.7 Micro-typographical refinements (RS)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+\MT@toks=\toks21
+\MT@count=\count99
+LaTeX Info: Redefining \textls on input line 789.
+\MT@outer@kern=\dimen112
+LaTeX Info: Redefining \textmicrotypecontext on input line 1334.
+\MT@listname@count=\count100
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
+File: microtype-pdftex.def 2017/07/07 v2.7 Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 912.
+LaTeX Info: Redefining \lslig on input line 912.
+\MT@outer@space=\skip46
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
+File: microtype.cfg 2017/07/07 v2.7 microtype main configuration file (RS)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip47
+\thm@postskip=\skip48
+\thm@headsep=\skip49
+\dth@everypar=\toks27
+)
+(C:/PROGRA~1/R/R-40~1.0/share/texmf/tex/latex\Sweave.sty
+Package: Sweave 
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count101
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count102
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count103
+\FV@StepNumber=\count104
+\FV@OutFile=\write3
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\ae.sty"
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+))))
+\c@fact=\count105
+
+(ExtremeValueTheoryProject.aux)
+\openout1 = `ExtremeValueTheoryProject.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 21.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Info: Redefining \microtypecontext on input line 21.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg"
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count106
+\scratchdimen=\dimen115
+\scratchbox=\box29
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen116
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks29
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+(ExtremeValueTheoryProject-concordance.tex)
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 35.
+
+(C:/PROGRA~1/R/R-40~1.0/share/texmf/tex/latex\ts1aer.fd
+File: ts1aer.fd 
+)
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10.95> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 35.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 44.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\calrsfs\omsrsfs.fd") [1] [2]
+(ExtremeValueTheoryProject.toc)
+\tf@toc=\write4
+\openout4 = `ExtremeValueTheoryProject.toc'.
+
+ [3] [4] [5]
+Overfull \hbox (7.61975pt too wide) in paragraph at lines 153--154
+\T1/aer/bx/n/10.95 Theorem 2.10. \T1/aer/m/it/10.95 (-20) Let $\OML/cmm/m/it/10
+.95 X[]; X[]; ::; X[]$ \T1/aer/m/it/10.95 (-20) be a se-quence of in-de-pen-den
+t and identically-
+ []
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 177.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 177.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `aett' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Overfull \hbox (15.57881pt too wide) in paragraph at lines 203--204
+\T1/aer/m/it/10.95 (-20) Possible val-ues of $\OML/cmm/m/it/10.95 X[]$ \T1/aer/
+m/it/10.95 (-20) are : $\OT1/cmr/m/n/10.95 (-20) 0\OML/cmm/m/it/10.95 ; []; [];
+ []; []; []; ::: \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.
+95 (-20) = 1$ \T1/aer/m/it/10.95 (-20) and hence $[][] \OML/cmm/m/it/10.95 X[] 
+\OMS/cmsy/m/n/10.95 !
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--277
+
+ []
+
+[8] <ExtremeValueTheoryProject-001.pdf, id=49, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-001.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-001.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-001.pdf used on input line 2
+82.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+
+<ExtremeValueTheoryProject-002.pdf, id=50, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-002.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-002.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-002.pdf used on input line 2
+89.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [9 <./ExtremeValueTheoryProject-001.pdf>] [10 <./ExtremeValueTheoryProject-002
+.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+<ExtremeValueTheoryProject-004.pdf, id=69, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-004.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-004.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-004.pdf used on input line 3
+39.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [11]
+<ExtremeValueTheoryProject-005.pdf, id=73, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-005.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-005.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-005.pdf used on input line 3
+46.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [12 <./ExtremeValueTheoryProject-004.pdf>] [13 <./ExtremeValueTheoryProject-00
+5.pdf>] [14]
+<ExtremeValueTheoryProject-007.pdf, id=96, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-007.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-007.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-007.pdf used on input line 4
+41.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [15 <./ExtremeValueTheoryProject-007.pdf>] <ExtremeValueTheoryProject-008.pdf,
+ id=106, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-008.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-008.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-008.pdf used on input line 4
+50.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--468
+
+ []
+
+[16 <./ExtremeValueTheoryProject-008.pdf>] [17] [18]
+<ExtremeValueTheoryProject-010.pdf, id=123, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-010.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-010.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-010.pdf used on input line 5
+60.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [19 <./ExtremeValueTheoryProject-010.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 573--576
+
+ []
+
+LaTeX Font Info:    Font shape `TS1/aer/m/it' in size <10.95> not available
+(Font)              Font shape `TS1/cmr/m/it' tried instead on input line 595.
+[20] <ExtremeValueTheoryProject-011.pdf, id=137, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-011.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-011.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-011.pdf used on input line 6
+73.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [21]
+<ExtremeValueTheoryProject-012.pdf, id=141, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-012.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-012.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-012.pdf used on input line 6
+92.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [22 <./ExtremeValueTheoryProject-011.pdf>] <ExtremeValueTheoryProject-013.pdf,
+ id=151, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-013.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-013.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-013.pdf used on input line 7
+11.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [23 <./ExtremeValueTheoryProject-012.pdf>] <ExtremeValueTheoryProject-014.pdf,
+ id=161, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-014.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-014.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-014.pdf used on input line 7
+23.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [24 <./ExtremeValueTheoryProject-013.pdf>] [25 <./ExtremeValueTheoryProject-01
+4.pdf>] [26] [27] [28]
+<ExtremeValueTheoryProject-015.pdf, id=190, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-015.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-015.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-015.pdf used on input line 8
+33.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [29]
+<ExtremeValueTheoryProject-016.pdf, id=194, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-016.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-016.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-016.pdf used on input line 8
+37.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [30 <./ExtremeValueTheoryProject-015.pdf>] <ExtremeValueTheoryProject-017.pdf,
+ id=205, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-017.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-017.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-017.pdf used on input line 8
+47.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [31 <./ExtremeValueTheoryProject-016.pdf>] <ExtremeValueTheoryProject-018.pdf,
+ id=215, 433.62pt x 433.62pt>
+File: ExtremeValueTheoryProject-018.pdf Graphic file (type pdf)
+
+<use ExtremeValueTheoryProject-018.pdf>
+Package pdftex.def Info: ExtremeValueTheoryProject-018.pdf used on input line 8
+51.
+(pdftex.def)             Requested size: 288.0011pt x 288.01624pt.
+ [32 <./ExtremeValueTheoryProject-017.pdf>] [33 <./ExtremeValueTheoryProject-01
+8.pdf>]
+Overfull \hbox (15.8217pt too wide) in paragraph at lines 878--878
+[]\T1/aett/bx/n/10.95 plot(c(x,x,x), c(Gumbel_density,Frechet_density, Weibull_
+density),[] 
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 878
+.
+(C:/PROGRA~1/R/R-40~1.0/share/texmf/tex/latex\ts1aett.fd
+File: ts1aett.fd 
+)
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 878
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
+File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10.95> not available
+(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 878.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (217.2552pt too wide) in paragraph at lines 878--878
+[]\T1/aett/bx/n/10.95 legend(\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 topright\
+TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 , legend=c(\TS1/cmtt/m/n/10.95 '\T1/aet
+t/bx/n/10.95 Gumbel\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 ,\TS1/cmtt/m/n/10.9
+5 '\T1/aett/bx/n/10.95 Frechet\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 ,\TS1/cm
+tt/m/n/10.95 '\T1/aett/bx/n/10.95 Weibull\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.
+95 ), lty=c(1,2,3), col=c(\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 green\TS1/cm
+tt/m/n/10.95 '\T1/aett/bx/n/10.95 ,\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 blu
+e\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 ,\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/1
+0.95 red\TS1/cmtt/m/n/10.95 '\T1/aett/bx/n/10.95 ))[] 
+ []
+
+[34]
+Overfull \hbox (63.4469pt too wide) in paragraph at lines 970--970
+[]  \T1/aett/bx/n/10.95 data_series[[i]] <- rnorm(n = n, mean = original_mean, 
+sd = original_sd)[] 
+ []
+
+
+Overfull \hbox (143.77579pt too wide) in paragraph at lines 970--970
+[]\T1/aett/bx/n/10.95 plot(fit, type = "density", main = "Empirical density vs 
+estimated Gumbel distribution")[] 
+ []
+
+[35]
+Overfull \hbox (187.95503pt too wide) in paragraph at lines 970--970
+[]\T1/aett/bx/n/10.95 plot(x = rep(1:series_length, each = n), y = unlist(data_
+series), main = "Peak Over Thresholds",[] 
+ []
+
+
+Overfull \hbox (74.92245pt too wide) in paragraph at lines 970--970
+[]     \T1/aett/bx/n/10.95 sub = paste("threshold =", threshold), xlab = "serie
+s", ylab = "value")[] 
+ []
+
+
+Overfull \hbox (235.58023pt too wide) in paragraph at lines 970--970
+[]\T1/aett/bx/n/10.95 points(x = rep(1:series_length, each = n)[pot_points], y 
+= unlist(data_series)[pot_points], col = "red")[] 
+ []
+
+
+Overfull \hbox (46.23357pt too wide) in paragraph at lines 970--970
+[]\T1/aett/bx/n/10.95 gp_fit <- fevd(unlist(data_series), threshold = threshold
+, type = "GP")[] 
+ []
+
+
+Overfull \hbox (229.84245pt too wide) in paragraph at lines 970--970
+[]\T1/aett/bx/n/10.95 plot(gp_fit, type = "density", main = "Empirical POT exce
+edances density vs estimated GP distribution")[] 
+ []
+
+[36] [37] (ExtremeValueTheoryProject.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5985 strings out of 493323
+ 88955 string characters out of 3139065
+ 173333 words of memory out of 3000000
+ 8911 multiletter control sequences out of 15000+200000
+ 80767 words of font info for 450 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,16n,38p,785b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\burke\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+tctt1095.pk> <C:\Users\burke\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\tcti1095.pk> <C:\Users\burke\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+xti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ExtremeValueTheoryProject.pdf (38 pages, 683058 bytes).
+PDF statistics:
+ 316 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 45136 words of extra memory for PDF output out of 51595 (max. 10000000)
+
