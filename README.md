@@ -1,10 +1,10 @@
 # Extreme Value Theory
 
-This [project](https://github.com/nbizzle23/EVT/blob/master/ExtremeValueTheoryProject.pdf) discusses the statistics related to extreme values known as Extreme Value Theory and Analysis. Using the limiting behavior in the tails of the extreme distributions the probability and the nature of these occurrence can be determined. With RStudio, various applications and  theorems of EVT  will be explored. 
+This [project](https://github.com/nbizzle23/EVT/blob/master/ExtremeValueTheoryProject.pdf) discusses the statistics related to extreme values known as Extreme Value Theory and Analysis. Using the limiting behavior in the tails of the extreme distributions the probability and the nature of these occurrence can be determined. With RStudio, various applications and  theorems of EVT  will be explored. [Slides](https://rpubs.com/nburke2/629518)
 
 ### Supplementary R Code
 
-Below is the code needed to re-create the graphics used in this document
+Below is the code needed to re-create the graphics used in this document. 
 
 ```
 
